@@ -1,4 +1,4 @@
-package com.mahendra.java.datastructures;
+package mahendra.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
