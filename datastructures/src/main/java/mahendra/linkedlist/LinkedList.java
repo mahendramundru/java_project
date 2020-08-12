@@ -1,5 +1,7 @@
 package mahendra.linkedlist;
 
+//This implementation is with extensive names 
+
 //****************** LinkedList implementation using current/last Reference along with headRef
 // class LinkedListNode{
 //   int data;
