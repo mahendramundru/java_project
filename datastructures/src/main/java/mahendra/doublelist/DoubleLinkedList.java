@@ -35,7 +35,52 @@ public class DoubleLinkedList {
 		newNode.left=temp;
 		newNode.right=null;
 		
+	}
+	
+	//delete first occurence of the data node
+	void deleteNode(int data) {
 		
+		if(head==null) {
+			System.out.println("empty list deletion not possible");
+			return;
+		}
+		
+		//head updation required if found at head
+		if(head.data==data) {
+			System.out.println("Found data at head and deleted");
+			head=head.right;
+			
+			//i.e. head here now points to head.right
+			if(head!=null) { //if list contain more than one node and node found at head
+				head.left=null;
+			}
+			
+			return;
+			//garbage collection
+		}
+		
+		//if more than one node in list
+		Node temp=head;
+		
+		while(temp.right!=null) {
+			if(temp.right.data==data) {
+				
+				System.out.println("Found data  and deleted");
+				
+				Node foundNodeRightNode=temp.right.right;
+				temp.right=foundNodeRightNode;  
+				if(temp.right!=null) { //if there are only two nodes and found at second node
+					foundNodeRightNode.left=temp;
+				}
+				
+				return;
+			}
+			
+			temp=temp.right;
+		}
+		
+		System.out.println("Element not found");
+		return;
 		
 	}
 	
@@ -70,6 +115,7 @@ public class DoubleLinkedList {
         doubleList.insertNode(3);
         doubleList.insertNode(6);
         doubleList.insertNode(5);
+        doubleList.deleteNode(6);
         
         doubleList.displayNodes();
         
