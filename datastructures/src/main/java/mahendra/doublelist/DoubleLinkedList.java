@@ -16,7 +16,7 @@ public class DoubleLinkedList {
 	Node head;
 	
 	
-	
+	//insertion at the end of the list
 	void insertNode(int data) {
 		if(head==null) {
 			head=new Node(data);
